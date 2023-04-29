@@ -287,6 +287,10 @@ h2 {
   padding-bottom: 10px;
   display: flex;
   justify-content: center;
+  background-color: #F2EC94;
+  border-color: #F2EC94;
+  color: #101C26;
+
 }
 .colapse{
   padding-top: 5px;
