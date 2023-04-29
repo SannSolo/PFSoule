@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300&family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+
+// PALETA DE COLORES // 
+$negro: #101C26;
+$celeste: #A7F2EB;
+$amarillo: #F2EC94;
+$naranja: #F2C894;
+$crudo: #F2F2F2;
+
+// SIZES TEXTOS //
+$sz-sm: 20px;
+$sz-md: 30px;
+$sz-lg: 55px;
+
+// PUNTOS DE QUIEBRE //
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// MEDIA QUERIES //
+@mixin respond-to($breakpoint) {
+  @if $breakpoint ==mobile {
+    @media (max-width: #{$mobile}) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==tablet {
+    @media (max-width: #{$tablet}) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==desktop {
+    @media (max-width: #{$desktop}) {
+      @content;
+    }
+  }
+}
+
+// IMAGENES RESPONSIVAS //
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+//INDEX CODE // 
+.navbar {
+  border-radius: 8px;
+  border: 5px solid #A7F2EB;
+  font-weight: bold;
+
+  @include respond-to(mobile) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+.LogoNav {
+  width: 120px;
+  border-radius: 25px;
+}
+
+.ultimo {
+  display: grid;
+  place-items: center;
+  padding: 85px;
+}
+
+.logoGrande {
+  height: 250px;
+}
+
+.textInicio {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 45px;
+  margin: 50px;
+  text-transform: lowercase;
+
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+
+  }
+}
+
+.What {
+  display: grid;
+  padding: 25px;
+
+  h2 {
+    text-align: center;
+    color: $negro;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: $sz-lg;
+    text-shadow: 2px 4px $crudo;
+  }
+
+  p {
+    text-align: center;
+    color: $negro;
+    font-size: $sz-md;
+    font-weight: bold;
+  }
+}
+
+
+.How {
+  display: grid;
+  padding: 25px;
+
+  h2 {
+    text-align: center;
+    color: $negro;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: $sz-lg;
+    text-shadow: 2px 4px $crudo;
+  }
+
+  p {
+    text-align: center;
+    color: $negro ;
+    font-size: $sz-md;
+    font-weight: bold;
+
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 25px;
+  }
+
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  
+
+
+  .footer {
+    background-color: #101C26;
+    height: 120px;
+  }
+  
+  .footer img {
+    width: 70px;
+    padding: 10px;
+    padding-top: 20px;
+  }
+  
+  .footer p {
+    color: #F2F2F2;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 20px 0;
+  }
+  
+  .footer a {
+    margin-left: auto;
+  }
+  
+
+  @import url(./_about.scss);
+  @import url(./_bestjobs.scss);
+  @import url(./_contact.scss);
+  @import url(./_faq.scss);
+
